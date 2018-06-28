@@ -1,0 +1,19 @@
+if(RoutRequest)
+ {
+	qos=	determineQoS(RouteRequest.dataType);
+	routeInformaton=	QoSAssistedRouting();
+	
+	result =classify(qos, routeinformation)
+	
+switch(result.action)
+	case: send
+		send(result.constraints)
+	case: drop
+		drop();
+
+if(extTR)
+{
+	qos=determineQoSType(extTR.dataType);
+	utilization=	self.nodeUtilization();
+	
+classify	

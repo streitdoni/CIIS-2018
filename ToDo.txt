@@ -1,0 +1,9 @@
+ToDo:
+
+Instruction
+	- Motivation
+	- Problem
+		Reference to ResourceReservation Mobile Ad-Hoc Networks Its Advantages 			and Challenges
+
+Research Questions
+	- how to distribute network load regarding to the priority of QoS at runtime

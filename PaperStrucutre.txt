@@ -1,0 +1,22 @@
+1. Context / Motivation
+	Communication is exxential and indispensable
+	ref to SVFua
+	Multicast
+	Datatypes
+	Multihop
+	
+2. The Problem
+	Individual QoS requirements exist in the military sector. The mentioned	
+H.264
+	MPEG4
+	MPEG2
+	WMV9
+	QoS
+	limieted bandwith
+	speed of Boxer / Puma
+	bottlenecks
+	Scenario
+3. Research Question
+	
+4. Approach
+5. structure
