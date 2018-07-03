@@ -96,14 +96,13 @@ pdfborder={0 0 0}
 		\item How can the current transmissions in the \MANET{} be distributed best in order to fulfill the \QOS{} requirements? 
 		\item How can areas with high network utilization be identified?
 		\item In case of a sender with higher-priority data determining the best path towards all multicast receivers, how can other senders be informed about changing the behavior of their current transmissions, in order to provide the necessary capacity for the delivery of higher-priority data?
-		\item If a multicast route meets the \QOS{} requirements, how can quality be maintained during transmission?
-		\item What impact does the \QOS{} management overhead have on the network when the mobility of the nodes is high?
+%		\item If a multicast route meets the \QOS{} requirements, how can quality be maintained during transmission?
 	\end{itemize}
 
 	\section{Related Work}
-	In the paper by Kumar et al. \cite{RelatedWork:QMRPRNS} a \QOS{} routing protocol is introduced which uses a neighbor reliability pair factor to assign a route for a multicast session. This factor is based on the battery level, distance and mobility of the node. The algorithm tries to increase the robustness of active routes. In doing so, the algorithm performs well, compared to the multicast routing protocols MAODV \cite{RelatedWork:MAODV} and EMAODV \cite{RelatedWork:EMAODV}.\\
-	The work of Lu et al. \cite{RelatedWork:QoSWMN} proposes a unicast routing protocol designed for hybrid wireless mesh networks \cite{RelatedWorkContent:WMN}. The algorithm provides a multi-criteria routing functionality with the goal to achieve the utilization of clients. Here, the data is divided in urgent and non-urgent \QOS{} requirements. End-to-End delay is determined when transmitting urgent data, hop count and link load are measured when non-urgent data has to be delivered. Simulation results indicate, that the route selection with respect to the data type can effectively reduce the average end-to-end delay when transmitting urgent data. In addition, the utilization of the network is more balanced while guaranteeing the capability when transmitting non-urgent data.\\
-	A further approach to achieve \QOS{} is to manage the network resources of multicast sessions according to the  feedback received by multicast members \cite{ReleatedWork:QoSSessionAdaptation}. The approach tries to adjust the sending rate and the codec of video streams regarding to the received feedback of multicast receivers. The feedback is classified with fuzzy logic \cite{RelatedWorkContent:QoSSessionAdaptationFuzzySets}\cite{RelatedWorkContent:QoSSessionAdaptationFuzzySets2}. The evaluation results show, that with resource adjustment techniques, the packet delivery ratio and the delay can be improved.
+	In order to create a balanced transmission in the \MANET{} each source has to be able chose the most suitable route for the requested type of data. To identify possible routes towards the destination the paper by Helen Bakhsh et al. \cite{RelatedWork:MultiPath} proposes a route discovery algorithm which determines several paths depending on a trust value of each participating node. This value is calculated from the relationship between sent packets and received acknowledgments. For a specified time period the source receives multiple route replies and specifies according to the trust value of the route the most suitable path. However, this approach can be used to receive an overview of current transmission and the associated data types.\\
+%	The work of Lu et al. \cite{RelatedWork:QoSWMN} proposes a unicast routing protocol designed for hybrid wireless mesh networks \cite{RelatedWorkContent:WMN}. The algorithm provides a multi-criteria routing functionality with the goal to achieve the utilization of clients. Here, the data is divided in urgent and non-urgent \QOS{} requirements. End-to-End delay is determined when transmitting urgent data, hop count and link load are measured when non-urgent data has to be delivered. Simulation results indicate, that the route selection with respect to the data type can effectively reduce the average end-to-end delay when transmitting urgent data. In addition, the utilization of the network is more balanced while guaranteeing the capability when transmitting non-urgent data.\\
+	The work of Shams Shafigh et al. manages the network resources of multicast sessions according to the  feedback received by multicast members \cite{ReleatedWork:QoSSessionAdaptation}. The approach tries to adjust the sending rate and the codec of video streams regarding to the received feedback of multicast receivers. The feedback is classified with fuzzy logic \cite{RelatedWorkContent:QoSSessionAdaptationFuzzySets}\cite{RelatedWorkContent:QoSSessionAdaptationFuzzySets2}. The evaluation results show, that with resource adjustment techniques, the packet delivery ratio and the delay can be improved. Adapting the bandwidth is an interesting approach in case of a higher-priority stream requests the capacities. In such a situation the feedback can be used to inform a current transmission about a higher-priority data which could lead to an adjustment of the sending rate.
 %	Beforehand, the behavior of a \MANET{} with high network load has to be investigated. The first issue to be analyzed is how the existing multicast routing protocols are coping with the high utilization. 
 %	In particular, which result does a network with high utilization produce, where many multicast sessions exist that use \VOIP{}, compared to a network, where a reduced number of multicast sessions exist that stream videos.\\
 %	Traditional resource reservation protocols like RSVP are not sufficient for \MANET{s} \cite{MANET:ResourceManagement}
@@ -152,7 +151,7 @@ pdfborder={0 0 0}
 				bar width=8pt,
 		%		nodes near coords,
 				point meta=y,
-				width=6.1cm,
+				width=6cm,
 		},
 				every axis legend/.append style={
 					at={(0.5,1.13)},
@@ -167,6 +166,8 @@ pdfborder={0 0 0}
 				ymin=0,
 				ymax=100,
 				yticklabel={$\pgfmathprintnumber{\tick}$\,\%},
+				ylabel=
+				Received packets in \%
 			]
 				\addplot coordinates {
 					(267,77.805178792)
@@ -187,7 +188,7 @@ pdfborder={0 0 0}
 			\legend{$Video_{1}$,$VoIP_{1}$,$Video_{2}$,$VoIP_{2}$}
 			\end{axis}
 		\end{tikzpicture}
-		\hspace{0.3cm}
+		\hspace{0.2cm}
 		%%Video_1,0.018912588134116,0.16371418644307,0.78227163420997
 		%%VoIP_1,0.007258126063521,0.015915055324186,0.029224751686324
 		%%Video_2,0.016676869124132,0.058117295307285,0.24275129073046
@@ -198,6 +199,7 @@ pdfborder={0 0 0}
 				ymin=0.0,
 				ymax=0.8,
 				yticklabel={$\pgfmathprintnumber{\tick}$\,ms},
+				ylabel=End-To-End Delay
 			]
 				\addplot coordinates {
 				(267,0.16371418644307)
@@ -246,21 +248,15 @@ Burbank, J. L., Chimento P. F., Haberman, B. K., Kasch W. T.: Key Challenges of 
 
 \bibitem{military:narrowband}
 Leduc, J., Antweiler, M., Maseng, T.: Spectrum issues of NATO narrowband waveform: On the spectral efficiency of CPM-Modulation with small modulation indices. In: Military Communications and Information Systems Conference (MCC) (2012)
-\bibitem {RelatedWork:EMAODV}
-Chen, H., Yan, Z., Sun, B., Zeng, Y., He, X.: Entropy-based long-life multicast routing protocol in maodv. In: ISECS international
-colloquium on computing, communication, control, and
-management (2009)
-
-\bibitem{RelatedWork:MAODV}
-Royer, EM., Perkins, CE.: Multicast operation of the ad-hoc on-demand distance vector routing protocol. In: Proceedings of
-the 5th annual ACM/IEEE international conference on mobile computing and networking (1999)
-
 %\bibitem{MANET:ResourceManagement}
 %Ganesh Datey, S., Ansari, T.:Mobile Ad-Hoc Networks Its Advantages and
 %Challenges. In: International Journal of Electrical and Electronics Research (A.S.M) (2015)
 
 \bibitem{Video:Bandwidth}
 Ozer, J.:Streaming 101: The Basics – Codecs, Bandwidth, Data Rate and Resolution. \url{https://streaminglearningcenter.com/articles/streaming-101-the-basics-codecs-bandwidth-data-rate-and-resolution.html}. Accessed 05 Feb 2009
+
+\bibitem{RelatedWork:MultiPath}
+Bakhsh, H., Zhang, N., Carpenter, A.: TADL: A Trust-Aware Dynamic Location-Based Protocol Suite For Discovering Multiple Paths in MANETs. In: Proceedings of the 2015 International Conference on Distributed Computing and Networking (2015)
 
 \bibitem{RelatedWork:QMRPRNS}
 Kumar Yadav, A., Tripathi, S.: Design of QoS multicast routing protocol using reliable node selection scheme for MANETs. In: Peer-to-Peer Netw. Appl. (2016)
