@@ -41,17 +41,17 @@ pdfborder={0 0 0}
 %                                     also used for the TOC unless
 %                                     \toctitle is used
 %
-\author{Klement Streit, Peter Hillmann \and Gabi Dreo Rodosek
+\author{Klement Streit \and Peter Hillmann
 }
 %
-\authorrunning{K. Streit, P. Hillmann, G. Dreo Rodosek} % abbreviated author list (for running head)
+\authorrunning{K. Streit, P. Hillmann} % abbreviated author list (for running head)
 %
 %%%% list of authors for the TOC (use if author list has to be modified)
 %\tocauthor{Ivar Ekeland, Roger Temam, Jeffrey Dean, David Grove,
 %Craig Chambers, Kim B. Bruce, and Elisa Bertino}
 %
-\institute{Universit\"at der Bundeswehr M\"unchen, Neubiberg, Germany,\\
-\email{\{klement.streit,peter.hillmann,gabi.dreo\}@unibw.de}}
+\institute{Universit\"at der Bundeswehr M\"unchen, 85579 Neubiberg, Germany\\
+\email{\{klement.streit,peter.hillmann\}@unibw.de}}
 
 \maketitle              % typeset the title of the contribution
 
@@ -67,18 +67,18 @@ pdfborder={0 0 0}
 	
 	\section{Problem Description}
 	 % A drone could for instance pass a video stream of an observed area to the multicast group or soldiers exchange tactical situation pictures. 
-	In the military sector it is particularly important to meet the transmission requirements with Quality of Service (\QOS{}) compared to the civil environment. Troops in combat depend on a robust network architecture that is available at any time, even when the participants are constantly on the move and communication flow is high. Every data type mentioned above has individual \QOS{} requirements to provide their services. They differ in delay, throughput, loss rate and quality. Voice over IP (\VOIP{}) relies on a delay less than $250ms$. Video streaming at least needs a bandwidth over $1Mbps$. Transferring for instance a video stream with a resolution of $640$x$480$ pixels needs a bandwidth between $600$-$700Kbps$ \cite{Video:Bandwidth}. Providing these services increases the network load. The narrowband, used in the military, reaches a bandwidth of $64Kbps$ \cite{military:narrowband}. With broadband communication the radio can reach a bandwidth up to $2Mbps$. The resources of \MANET{s} vary depending on the continuously changing environmental conditions. It is a common situation, that only a single, long-distance route is available to a multicast receiver or that a specific node acts as forwarder for several multicast sessions. In case of high network load, these constellations result in higher delay, congestions, bottlenecks, insufficient packet delivery ratio and, in the worst case, a Denial-of-Service. Consequently, all \QOS{} requirements can no longer be achieved with current technologies.
-	\begin{figure}[hb]
+	In the military sector it is particularly important to meet the transmission requirements with Quality of Service (\QOS{}) compared to the civil environment. Troops in combat depend on a robust network architecture that is available at any time, even when the participants are constantly on the move and communication flow is high. Every data type mentioned above has individual \QOS{} requirements to provide their services. They differ in delay, throughput, loss rate and quality. Voice over IP (\VOIP{}) relies on a delay less than $250ms$. Video streaming at least needs a bandwidth over $1Mbps$. Transferring for instance a video stream with a resolution of $640$x$480$ pixels needs a bandwidth between $600$-$700Kbps$ \cite{Video:Bandwidth}. Providing these services increases the network load. Narrowband used by military reaches typically a bandwidth of $64Kbps$ \cite{military:narrowband}. With broadband communication the radio can reach a bandwidth up to $2Mbps$. The resources of \MANET{s} vary depending on the continuously changing environmental conditions. It is a common situation, that only a single, long-distance route is available to a multicast receiver or that a specific node acts as forwarder for several multicast sessions. In case of high network load, these constellations result in higher delay, congestions, bottlenecks, insufficient packet delivery ratio and, in the worst case, a Denial-of-Service. Consequently, all \QOS{} requirements can no longer be achieved with current technologies. The scenario in Figure \ref{fig:multicast} illustrates a behavior, where a capacity problem can occur and could be solved with \QOS{} extended routing.
+	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.9\textwidth]{figures/MulticastCommunicationOne.pdf}
 		\caption{Example of an arising transmission problem}
 		\label{fig:multicast}
 	\end{figure}
-	The scenario in figure \ref{fig:multicast} illustrates a behavior, where a capacity problem can occur and could be solved with \QOS{} extended routing. Node $7$ transmits a video stream at time $t$ to the Nodes $3$ and $6$. At time $t+1$, Node $8$ tries to communicate via \VOIP{} with Nodes $2$ and $1$. The intermediate Node $5$ already forwards the bandwidth-consuming video stream and now has to serve two routes. 
+	Node $7$ transmits a video stream at time $t$ to the Nodes $3$ and $6$. At time $t+1$, Node $8$ tries to communicate via \VOIP{} with Nodes $2$ and $1$. The intermediate Node $5$ already forwards the bandwidth-consuming video stream and now has to serve two routes. 
 %	Consequently, a solution tis mandatory.%...komisch
 	
 	\section{The Idea}
-	As mentioned in section \ref{sec:Introduction}, the data types have individual specifications, like e.g. available throughput. Furthermore, every data type has a certain priority. Keeping that in mind, the general objective is to reach the most optimal \QOS{} with respect to the available network resources and the individual performance specifications of the data types. To achieve this, every node in this \MANET{} is, apart from the common routing, equipped with additional \QOS{} information. Figure \ref{fig:QoSDecision} shows the architecture of a node with such a \QOS{} routing extension.\\
+	As mentioned in Section \ref{sec:Introduction}, the data types have individual specifications, like e.g. available throughput. Furthermore, every data type has a certain priority. Keeping that in mind, the general objective is to reach the most optimal \QOS{} with respect to the available network resources and the individual performance specifications of the data types. To achieve this, every node in this \MANET{} is, apart from the common routing, equipped with additional \QOS{} information. Figure \ref{fig:QoSDecision} shows the architecture of a node with such a \QOS{} routing extension.\\
 	Before a node starts transmitting payload, the network capacities have to be compared to the \QOS{} requirements of the payload. This is achieved with transmission request. This transmission requests can either be received from a participating node of the network (\textit{External Transmission Request}) or from a node itself (\textit{Internal Transmission Request}). Both requests contain the \QOS{} requirements of the data type and the priority. \QOS{} requirements specify delay, loss rate and necessary bandwidth of the payload. 
 	\begin{figure}[h]
 		\centering
@@ -96,30 +96,31 @@ pdfborder={0 0 0}
 		\item How can the current transmissions in the \MANET{} be distributed best in order to fulfill the \QOS{} requirements? 
 		\item How can areas with high network utilization be identified?
 		\item In case of a sender with higher-priority data determining the best path towards all multicast receivers, how can other senders be informed about changing the behavior of their current transmissions, in order to provide the necessary capacity for the delivery of higher-priority data?
-%		\item If a multicast route meets the \QOS{} requirements, how can quality be maintained during transmission?
+		\item If a multicast route meets the \QOS{} requirements, how can quality be maintained during transmission?
 	\end{itemize}
 
 	\section{Related Work}
-	In order to create a balanced transmission in the \MANET{} each source has to be able chose the most suitable route for the requested type of data. To identify possible routes towards the destination the paper by Helen Bakhsh et al. \cite{RelatedWork:MultiPath} proposes a route discovery algorithm which determines several paths depending on a trust value of each participating node. This value is calculated from the relationship between sent packets and received acknowledgments. For a specified time period the source receives multiple route replies and specifies according to the trust value of the route the most suitable path. However, this approach can be used to receive an overview of current transmission and the associated data types.\\
-%	The work of Lu et al. \cite{RelatedWork:QoSWMN} proposes a unicast routing protocol designed for hybrid wireless mesh networks \cite{RelatedWorkContent:WMN}. The algorithm provides a multi-criteria routing functionality with the goal to achieve the utilization of clients. Here, the data is divided in urgent and non-urgent \QOS{} requirements. End-to-End delay is determined when transmitting urgent data, hop count and link load are measured when non-urgent data has to be delivered. Simulation results indicate, that the route selection with respect to the data type can effectively reduce the average end-to-end delay when transmitting urgent data. In addition, the utilization of the network is more balanced while guaranteeing the capability when transmitting non-urgent data.\\
+	In order to create a balanced transmission in the \MANET{} each source has to be able to chose the most suitable route for the requested type of data. To identify possible routes towards the destination, the paper by Helen Bakhsh et al. \cite{RelatedWork:MultiPath} proposes a route discovery algorithm which determines several paths depending on a trust value of each participating node. This value is calculated from the relationship between sent packets and received acknowledgments. For a specified time period the source receives multiple route replies and decides according to the trust value of the route the most suitable path. However, this approach can be used to get an overview of current transmission and the associated data types.\\
+	The work of Lu et al. \cite{RelatedWork:QoSWMN} proposes a unicast routing protocol designed for hybrid wireless mesh networks \cite{RelatedWorkContent:WMN}. The algorithm provides a multi-criteria routing functionality with the goal to find either the fastest path or the route with most promising battery level and less link load. The data is divided in urgent and non-urgent. Urgent data is transmitted via the fastest path and non-urgent data uses a route with minimal link load and highest battery level. Simulation results indicate, that the route selection with respect to the data type can effectively reduce the average end-to-end delay when transmitting urgent data. The link load of each node which is part of the received route reply can be extended with GPS coordinates in order to detect areas with high network utilization. The objective is to avoid such areas when searching after a route.\\
 	The work of Shams Shafigh et al. manages the network resources of multicast sessions according to the  feedback received by multicast members \cite{ReleatedWork:QoSSessionAdaptation}. The approach tries to adjust the sending rate and the codec of video streams regarding to the received feedback of multicast receivers. The feedback is classified with fuzzy logic \cite{RelatedWorkContent:QoSSessionAdaptationFuzzySets}\cite{RelatedWorkContent:QoSSessionAdaptationFuzzySets2}. The evaluation results show, that with resource adjustment techniques, the packet delivery ratio and the delay can be improved. Adapting the bandwidth is an interesting approach in case of a higher-priority stream requests the capacities. In such a situation the feedback can be used to inform a current transmission about a higher-priority data which could lead to an adjustment of the sending rate.
 %	Beforehand, the behavior of a \MANET{} with high network load has to be investigated. The first issue to be analyzed is how the existing multicast routing protocols are coping with the high utilization. 
 %	In particular, which result does a network with high utilization produce, where many multicast sessions exist that use \VOIP{}, compared to a network, where a reduced number of multicast sessions exist that stream videos.\\
 %	Traditional resource reservation protocols like RSVP are not sufficient for \MANET{s} \cite{MANET:ResourceManagement}
 	\section{Early Results}
-	Before thinking about solving the mentioned research questions, it has to be analyzed which effect it has, when payload is split over several nodes in the \MANET{}. It is expected, that generating a balanced utilization provides better results with respect to delay and loss rate.
-	%The problem in figure \ref{fig:multicast} could for instance be solved by rerouting the video stream over node $5$. Hence, node $6$ forwards packets towards node $3$ despite receiving the same video stream. Now, node $3$ has free capacities to forward the higher prioritized \VOIP{} stream to node $1$ and $2$. 
-	To investigate this assumption, we created a scenario shown in figure \ref{fig:ScenarioBoth} where two different source nodes transmit data to the same destination. There, the behavior transmitting video and \VOIP{} streams $(Video_1,\VOIP{}_1)$ using the same path is compared with using different routes towards destination $(Video_2,\VOIP{}_2)$.
-%	The objective is to analyze the performance with respect to delay and loss rate. Figure \ref{fig:ScenarioBoth} describes the scenario, where this behavior can be analyzed.
+	Before we try to find a solution for the mentioned research questions, it has to be analyzed which effects occur during transmission in such situations. Especially, if a message is send over multiple nodes and the payload need to be spit. It is expected, that generating a balanced utilization provides better results with respect to delay and loss rate.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.8\textwidth]{figures/ScenarioBoth.pdf}
-		\caption{test}
+		\caption{Scenario using different routes to destination}
 		\label{fig:ScenarioBoth}
 	\end{figure}
+	%The problem in figure \ref{fig:multicast} could for instance be solved by rerouting the video stream over node $5$. Hence, node $6$ forwards packets towards node $3$ despite receiving the same video stream. Now, node $3$ has free capacities to forward the higher prioritized \VOIP{} stream to node $1$ and $2$.
+	To investigate this assumption, we created a scenario, where two different source nodes transmit data to the same destination, shown in Figure \ref{fig:ScenarioBoth}.
+	Thereby, the behavior transmitting video and \VOIP{} streams $(Video_1,\VOIP{}_1)$ using the same path is compared with using different routes towards destination $(Video_2,\VOIP{}_2)$.
+%	The objective is to analyze the performance with respect to delay and loss rate. Figure \ref{fig:ScenarioBoth} describes the scenario, where this behavior can be analyzed.
 	%Node $1$ transmits a video stream to node $0$. To a later time, node $2$ tries to send a \VOIP{} stream to the same destination. The VoIP stream can either be transmitted over the stressed nodes $5$ and $6$ or over $7$ and $8$. Consequently, the path of $VoIP_{1}$ chooses an already stressed path whereas node $2$ routes $VoIP_{2}$ over a path where the intermediate nodes can provide their full bandwidth.
-	It is not uncommon that different traffics stream share one path towards the same destination. The routing algorithms AODV \cite{EvaluationAODV} and DSR \cite{Evaluation:DSR} for instance chose the stressed path towards the destination because node $3$ with respect to the introduced scenario would reply with an active route to node $0$. It has to be mentioned, that the data rates of $Video_{1,2}$ provoke a utilized route. As a side note, with a configured video data rate of $205Kb/s$, the packets of all streams are delivered to the destination. All simulation parameters are described in Table \ref{tab:ScenarioParameters}.
-	\begin{table}[h]
+	It is not uncommon that different traffics streams share one path towards the same destination. The routing algorithms AODV \cite{EvaluationAODV} and DSR \cite{Evaluation:DSR} for instance chose the stressed path towards the destination because node $3$ with respect to the introduced scenario would reply with an active route to node $0$. It has to be mentioned, that the data rates of $Video_{1,2}$ provoke a utilized route. With a configured video data rate of $205Kb/s$, the packets of all streams are delivered to the destination. All simulation parameters are shown in Table \ref{tab:ScenarioParameters}.
+	\begin{table}
 		\centering
 		\caption{Configured Simulation parameters}
 		\begin{tabular}{l|l} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
@@ -133,12 +134,12 @@ pdfborder={0 0 0}
 		\end{tabular}
 	\label{tab:ScenarioParameters}
 	\end{table}\\
-	 The plots in Figure \ref{tab:ScenarioParameters} illustrate the delivered packets and the delay of the described scenario. Results of the left plot show, that more packets are delivered in total using different paths towards destination.
+	 The plots in Figure \ref{fig:EvaluationResults} illustrate the delivered packets and the delay of the described scenario. Results of the left plot show, that more packets are delivered in total using different paths towards node 0. This becomes clear with a required bandwidth fo $280Kb/s$. There, $Video_1$ delivers $54.994\%$ of the sent packets and the $\VOIP{}_1$ stream loses $5.7737\%$ of the transmitted payload whereas $Video_2$ reaches a delivery rate over $80\%$ and $\VOIP{}_2$ loses $6.8772\%$.
 	%Video_1,100,77.805178792,54.993834772
 	%VoIP_1,100,100,98.526315789
 	%Video_2,100,94.266337855
 	%VoIP_2,100,93.719298246
-	\begin{figure}[h]\label{fig:EvaluationResults}
+	\begin{figure}[h]
 		\pgfplotsset{every axis/.append style={%
 				font=\scriptsize,
 				ybar,
@@ -221,8 +222,10 @@ pdfborder={0 0 0}
 			\end{axis}
 		\end{tikzpicture}
 		\caption{Received packets in percent and associated delay with respect to video and VoIP streams}
+		\label{fig:EvaluationResults}
 	\end{figure}
-	This becomes clear with a required bandwidth fo $280Kb/s$. There, $Video_1$ delivers $54.994\%$ of the sent packets and the $\VOIP{}_1$ stream loses $5.7737\%$ of the transmitted payload whereas $Video_2$ reaches a delivery rate over $80\%$ and $\VOIP{}_2$ loses $6.8772\%$. The high loss rate of $Video_{1}$ may be due to an arising congestion. The end to end delay in the left plot reinforce this assumption. Here, $Video_{1}$ produces a noticeable high delay with a required bandwidth of $280Kb/s$. This is because the intermediate nodes do not have enough capacities to forward packets of two routes. In general, using the same path to the destination creates a higher delay and the results shows that less packets are lost when using different paths.  
+	The high loss rate of $Video_{1}$ may be due to an arising congestion. The end to end delay in the left plot reinforce this assumption. Here, $Video_{1}$ produces a noticeable high delay with a required bandwidth of $280Kb/s$. This is because the intermediate nodes do not have enough capacities to forward packets of two routes. In general, using the same path to the destination creates a higher delay and the results show that less packets are lost when using different paths. Based on the results, the next step is to identify nodes with low available bandwidth. The idea is to exclude them when searching after a path in order to provoke a balanced utilization. 
+	
 %	 This also leads to the question, how  guaranteed to meet the \QOS{} requirements during transmission? 
 %	In partially or fully meshed \MANET{s}, several routes from a source to a unicast sink or a  multicast exist. We assume that a malicious node is already present in the network and the fake routes are established as well. How is the behavior of the network with respect to the associated routing during such an attack. Does the blackhole attack have different impact to the packet delivery related to unicast and multicast routing? The topology must provide several routes to sources in order to bypass the malicious node.  path Does a threshold during a blackhole attack exist where one malicious node
 %	rotocolls (GKMP)\cite{MANET:GKMPs} in \MANET{s} where a authority exists which is responsible for key management, a Routing Service (RS) exists which is responsible for finding the most efficient route to the requested destination. This component can equal to the \GKMP{s} either be a central instance or a elected, participating node in the \MANET{}. To meet the requirement to find requested routes from an arbitrary host, the \RS{} most be equipped with the knowledge of the actual topology of the network.  The figure .. illustrates the architecture of the 
@@ -257,9 +260,6 @@ Ozer, J.:Streaming 101: The Basics – Codecs, Bandwidth, Data Rate and Resoluti
 
 \bibitem{RelatedWork:MultiPath}
 Bakhsh, H., Zhang, N., Carpenter, A.: TADL: A Trust-Aware Dynamic Location-Based Protocol Suite For Discovering Multiple Paths in MANETs. In: Proceedings of the 2015 International Conference on Distributed Computing and Networking (2015)
-
-\bibitem{RelatedWork:QMRPRNS}
-Kumar Yadav, A., Tripathi, S.: Design of QoS multicast routing protocol using reliable node selection scheme for MANETs. In: Peer-to-Peer Netw. Appl. (2016)
 
 \bibitem{RelatedWork:QoSWMN}
 Lu, L., Jiang, H., Han, G., Ma and Renke Sun, S.: Multi-criteria routing metric for supporting data-differentiated service in hybrid wireless mesh networks in coal mines. In: International Journal of Distributed Sensor Networks (2017)
