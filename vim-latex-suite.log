@@ -1,0 +1,272 @@
+
+proj : texproject.vim: catching LatexSuiteFileType event
+env : envmacros.vim: Catching LatexSuiteFileType event
+comp : compiler.vim: Catching LatexSuiteFileType event
+fold : folding.vim: catching LatexSuiteFileType
+SyntaxFolds : Finished folding in   0.016582 seconds.
+brak : brackets.vim: Catching LatexSuiteFileType event
+view : texviewer.vim: Catching LatexSuiteFileType event
+main : main.vim: Catching LatexSuiteFileType event
+main : SetTeXOptions: sourcing maps
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Compiler
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Viewr
+comp : compiler/tex.vim: sourcing this file
+pack : packages.vim: Catching LatexSuiteFileType event
+pack : +Tex_pack_updateall
+pack : :Tex_pack_updateall: split
+pack : +Tex_ScanForPackages
+pack : :Tex_ScanForPackages: Begining scans in [main.tex], beginline = 36
+pack : :Tex_ScanForPackages: beginning scan for \usepackage lines
+pack : :Tex_ScanForPackages: found package(s) ["graphicx"] on line 10
+pack : :Tex_ScanForPackages: found package(s) ["tikz","pgfplots"] on line 11
+pack : :Tex_ScanForPackages: found package(s) ["url"] on line 12
+pack : :Tex_ScanForPackages: found package(s) ["hyperref"] on line 27
+pack : :Tex_ScanForPackages: found package(s) ["breakurl"] on line 29
+pack : :Tex_ScanForPackages: End scan \usepackage, detected packages = ,graphicx,tikz,pgfplots,url,hyperref,breakurl
+pack : :Tex_ScanForPackages: Beginning scan for \newcommand's
+pack : :Tex_ScanForPackages: Beginning scan for \newenvironment's
+pack : -Tex_ScanForPackages
+pack : :Tex_pack_updateall: detected [graphicx,tikz,pgfplots,url,hyperref,breakurl] in first run
+pack : :Tex_pack_updateall: scanning package graphicx
+pack : :Tex_pack_updateall: silent! find graphicx.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: graphicx not found anywhere
+pack : :Tex_pack_updateall: scanning package tikz
+pack : :Tex_pack_updateall: silent! find tikz.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: tikz not found anywhere
+pack : :Tex_pack_updateall: scanning package pgfplots
+pack : :Tex_pack_updateall: silent! find pgfplots.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: pgfplots not found anywhere
+pack : :Tex_pack_updateall: scanning package url
+pack : :Tex_pack_updateall: silent! find url.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: url not found anywhere
+pack : :Tex_pack_updateall: scanning package hyperref
+pack : :Tex_pack_updateall: silent! find hyperref.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: hyperref not found anywhere
+pack : :Tex_pack_updateall: scanning package breakurl
+pack : :Tex_pack_updateall: silent! find breakurl.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: breakurl not found anywhere
+pack : Tex_pack_check: searching for graphicx in dictionaries/ in &rtp
+pack : Tex_pack_check: searching for url in dictionaries/ in &rtp
+pack : Tex_pack_check: searching for hyperref in dictionaries/ in &rtp
+pack : :Tex_pack_updateall: throwing LatexSuiteScannedPackages event
+pack : -Tex_pack_updateall
+view : Tex_Complete: s:type = ref, typeoption = 
+view : Tex_Complete: using outline search method
+proj : texproject.vim: catching LatexSuiteFileType event
+env : envmacros.vim: Catching LatexSuiteFileType event
+comp : compiler.vim: Catching LatexSuiteFileType event
+fold : folding.vim: catching LatexSuiteFileType
+SyntaxFolds : Finished folding in   0.017969 seconds.
+brak : brackets.vim: Catching LatexSuiteFileType event
+view : texviewer.vim: Catching LatexSuiteFileType event
+main : main.vim: Catching LatexSuiteFileType event
+main : SetTeXOptions: sourcing maps
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Compiler
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Viewr
+comp : compiler/tex.vim: sourcing this file
+pack : packages.vim: Catching LatexSuiteFileType event
+pack : +Tex_pack_updateall
+pack : :Tex_pack_updateall: split
+pack : +Tex_ScanForPackages
+pack : :Tex_ScanForPackages: Begining scans in [main.tex], beginline = 36
+pack : :Tex_ScanForPackages: beginning scan for \usepackage lines
+pack : :Tex_ScanForPackages: found package(s) ["graphicx"] on line 10
+pack : :Tex_ScanForPackages: found package(s) ["tikz","pgfplots"] on line 11
+pack : :Tex_ScanForPackages: found package(s) ["url"] on line 12
+pack : :Tex_ScanForPackages: found package(s) ["hyperref"] on line 27
+pack : :Tex_ScanForPackages: found package(s) ["breakurl"] on line 29
+pack : :Tex_ScanForPackages: End scan \usepackage, detected packages = ,graphicx,tikz,pgfplots,url,hyperref,breakurl
+pack : :Tex_ScanForPackages: Beginning scan for \newcommand's
+pack : :Tex_ScanForPackages: Beginning scan for \newenvironment's
+pack : -Tex_ScanForPackages
+pack : :Tex_pack_updateall: detected [graphicx,tikz,pgfplots,url,hyperref,breakurl] in first run
+pack : :Tex_pack_updateall: scanning package graphicx
+pack : :Tex_pack_updateall: silent! find graphicx.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: graphicx not found anywhere
+pack : :Tex_pack_updateall: scanning package tikz
+pack : :Tex_pack_updateall: silent! find tikz.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: tikz not found anywhere
+pack : :Tex_pack_updateall: scanning package pgfplots
+pack : :Tex_pack_updateall: silent! find pgfplots.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: pgfplots not found anywhere
+pack : :Tex_pack_updateall: scanning package url
+pack : :Tex_pack_updateall: silent! find url.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: url not found anywhere
+pack : :Tex_pack_updateall: scanning package hyperref
+pack : :Tex_pack_updateall: silent! find hyperref.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: hyperref not found anywhere
+pack : :Tex_pack_updateall: scanning package breakurl
+pack : :Tex_pack_updateall: silent! find breakurl.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: breakurl not found anywhere
+pack : Tex_pack_check: searching for graphicx in dictionaries/ in &rtp
+pack : Tex_pack_check: searching for url in dictionaries/ in &rtp
+pack : Tex_pack_check: searching for hyperref in dictionaries/ in &rtp
+pack : :Tex_pack_updateall: throwing LatexSuiteScannedPackages event
+pack : -Tex_pack_updateall
+comp : +Tex_RunLaTeX, b:fragmentFile = 0
+comp : Tex_RunLaTeX: compiling to target [pdf]
+comp : Tex_RunLaTeX: getting dependency chain = [pdf,pdf]
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Compiler
+comp : Tex_RunLaTeX: setting target to pdf
+comp : Tex_RunLaTeX: compiling file once via Tex_CompileLatex
+comp : Tex_CompileLatex: getting mainfname = [main.tex] from Tex_GetMainFileName
+comp : Tex_CompileLatex: execing [make! main]
+comp : Tex_RunLaTeX: errlist = [
+24 warning: LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+25 warning: LaTeX Font Warning: Some font shapes were not available, defaults substituted.]
+comp : Tex_RunLaTeX: There were errors in compiling, breaking chain...
+comp : Tex_SetupErrorWindow: mfnlog = main.log
+comp : not finding error pattern anywhere in quickfix window :
+comp : not finding error pattern anywhere in quickfix window :main.tex
+comp : -Tex_RunLaTeX
+proj : texproject.vim: catching LatexSuiteFileType event
+env : envmacros.vim: Catching LatexSuiteFileType event
+comp : compiler.vim: Catching LatexSuiteFileType event
+fold : folding.vim: catching LatexSuiteFileType
+SyntaxFolds : Finished folding in   0.019795 seconds.
+brak : brackets.vim: Catching LatexSuiteFileType event
+view : texviewer.vim: Catching LatexSuiteFileType event
+main : main.vim: Catching LatexSuiteFileType event
+main : SetTeXOptions: sourcing maps
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Compiler
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Viewr
+comp : compiler/tex.vim: sourcing this file
+pack : packages.vim: Catching LatexSuiteFileType event
+pack : +Tex_pack_updateall
+pack : :Tex_pack_updateall: split
+pack : +Tex_ScanForPackages
+pack : :Tex_ScanForPackages: Begining scans in [main.tex], beginline = 36
+pack : :Tex_ScanForPackages: beginning scan for \usepackage lines
+pack : :Tex_ScanForPackages: found package(s) ["graphicx"] on line 10
+pack : :Tex_ScanForPackages: found package(s) ["tikz","pgfplots"] on line 11
+pack : :Tex_ScanForPackages: found package(s) ["url"] on line 12
+pack : :Tex_ScanForPackages: found package(s) ["hyperref"] on line 27
+pack : :Tex_ScanForPackages: found package(s) ["breakurl"] on line 29
+pack : :Tex_ScanForPackages: End scan \usepackage, detected packages = ,graphicx,tikz,pgfplots,url,hyperref,breakurl
+pack : :Tex_ScanForPackages: Beginning scan for \newcommand's
+pack : :Tex_ScanForPackages: Beginning scan for \newenvironment's
+pack : -Tex_ScanForPackages
+pack : :Tex_pack_updateall: detected [graphicx,tikz,pgfplots,url,hyperref,breakurl] in first run
+pack : :Tex_pack_updateall: scanning package graphicx
+pack : :Tex_pack_updateall: silent! find graphicx.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: graphicx not found anywhere
+pack : :Tex_pack_updateall: scanning package tikz
+pack : :Tex_pack_updateall: silent! find tikz.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: tikz not found anywhere
+pack : :Tex_pack_updateall: scanning package pgfplots
+pack : :Tex_pack_updateall: silent! find pgfplots.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: pgfplots not found anywhere
+pack : :Tex_pack_updateall: scanning package url
+pack : :Tex_pack_updateall: silent! find url.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: url not found anywhere
+pack : :Tex_pack_updateall: scanning package hyperref
+pack : :Tex_pack_updateall: silent! find hyperref.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: hyperref not found anywhere
+pack : :Tex_pack_updateall: scanning package breakurl
+pack : :Tex_pack_updateall: silent! find breakurl.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: breakurl not found anywhere
+pack : Tex_pack_check: searching for graphicx in dictionaries/ in &rtp
+pack : Tex_pack_check: searching for url in dictionaries/ in &rtp
+pack : Tex_pack_check: searching for hyperref in dictionaries/ in &rtp
+pack : :Tex_pack_updateall: throwing LatexSuiteScannedPackages event
+pack : -Tex_pack_updateall
+proj : texproject.vim: catching LatexSuiteFileType event
+env : envmacros.vim: Catching LatexSuiteFileType event
+comp : compiler.vim: Catching LatexSuiteFileType event
+fold : folding.vim: catching LatexSuiteFileType
+SyntaxFolds : Finished folding in   0.016595 seconds.
+brak : brackets.vim: Catching LatexSuiteFileType event
+view : texviewer.vim: Catching LatexSuiteFileType event
+main : main.vim: Catching LatexSuiteFileType event
+main : SetTeXOptions: sourcing maps
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Compiler
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Viewr
+comp : compiler/tex.vim: sourcing this file
+pack : packages.vim: Catching LatexSuiteFileType event
+pack : +Tex_pack_updateall
+pack : :Tex_pack_updateall: split
+pack : +Tex_ScanForPackages
+pack : :Tex_ScanForPackages: Begining scans in [main.tex], beginline = 36
+pack : :Tex_ScanForPackages: beginning scan for \usepackage lines
+pack : :Tex_ScanForPackages: found package(s) ["graphicx"] on line 10
+pack : :Tex_ScanForPackages: found package(s) ["tikz","pgfplots"] on line 11
+pack : :Tex_ScanForPackages: found package(s) ["url"] on line 12
+pack : :Tex_ScanForPackages: found package(s) ["hyperref"] on line 27
+pack : :Tex_ScanForPackages: found package(s) ["breakurl"] on line 29
+pack : :Tex_ScanForPackages: End scan \usepackage, detected packages = ,graphicx,tikz,pgfplots,url,hyperref,breakurl
+pack : :Tex_ScanForPackages: Beginning scan for \newcommand's
+pack : :Tex_ScanForPackages: Beginning scan for \newenvironment's
+pack : -Tex_ScanForPackages
+pack : :Tex_pack_updateall: detected [graphicx,tikz,pgfplots,url,hyperref,breakurl] in first run
+pack : :Tex_pack_updateall: scanning package graphicx
+pack : :Tex_pack_updateall: silent! find graphicx.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: graphicx not found anywhere
+pack : :Tex_pack_updateall: scanning package tikz
+pack : :Tex_pack_updateall: silent! find tikz.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: tikz not found anywhere
+pack : :Tex_pack_updateall: scanning package pgfplots
+pack : :Tex_pack_updateall: silent! find pgfplots.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: pgfplots not found anywhere
+pack : :Tex_pack_updateall: scanning package url
+pack : :Tex_pack_updateall: silent! find url.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: url not found anywhere
+pack : :Tex_pack_updateall: scanning package hyperref
+pack : :Tex_pack_updateall: silent! find hyperref.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: hyperref not found anywhere
+pack : :Tex_pack_updateall: scanning package breakurl
+pack : :Tex_pack_updateall: silent! find breakurl.sty
+pack : :Tex_pack_updateall: present file = main.tex
+pack : :Tex_pack_updateall: breakurl not found anywhere
+pack : Tex_pack_check: searching for graphicx in dictionaries/ in &rtp
+pack : Tex_pack_check: searching for url in dictionaries/ in &rtp
+pack : Tex_pack_check: searching for hyperref in dictionaries/ in &rtp
+pack : :Tex_pack_updateall: throwing LatexSuiteScannedPackages event
+pack : -Tex_pack_updateall
+comp : +Tex_RunLaTeX, b:fragmentFile = 0
+comp : Tex_RunLaTeX: compiling to target [pdf]
+comp : Tex_RunLaTeX: getting dependency chain = [pdf,pdf]
+comp : +Tex_SetTeXCompilerTarget: setting target to [pdf] for Compiler
+comp : Tex_RunLaTeX: setting target to pdf
+comp : Tex_RunLaTeX: compiling file once via Tex_CompileLatex
+comp : Tex_CompileLatex: getting mainfname = [main.tex] from Tex_GetMainFileName
+comp : Tex_CompileLatex: execing [make! main]
+comp : Tex_RunLaTeX: errlist = [
+24 warning: LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+25 warning: LaTeX Font Warning: Some font shapes were not available, defaults substituted.]
+comp : Tex_RunLaTeX: There were errors in compiling, breaking chain...
+comp : Tex_SetupErrorWindow: mfnlog = main.log
+comp : not finding error pattern anywhere in quickfix window :
+comp : not finding error pattern anywhere in quickfix window :main.tex
+comp : -Tex_RunLaTeX
+comp : not finding error pattern anywhere in quickfix window :
+comp : not finding error pattern anywhere in quickfix window :
+comp : not finding error pattern anywhere in quickfix window :
+comp : not finding error pattern anywhere in quickfix window :
+comp : not finding error pattern anywhere in quickfix window :
+comp : not finding error pattern anywhere in quickfix window :main.tex
+comp : not finding error pattern anywhere in quickfix window :
+view : Tex_Complete: s:type = ref, typeoption = 
+view : Tex_Complete: using outline search method
