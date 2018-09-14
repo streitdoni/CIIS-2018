@@ -6,7 +6,7 @@
 % See http://www.springer.com/computer/lncs/lncs+authors?SGWID=0-40209-0-0-0
 % for the full guidelines.
 %
-\documentclass[runningheads]{llncs}
+\documentclass[conference]{IEEEtran}
 \usepackage{graphicx}
 \usepackage{tikz,pgfplots}
 \usepackage[hyphens]{url}
@@ -35,25 +35,31 @@ pdfborder={0 0 0}
 
 \begin{document}
 
-\title{Meeting Data Specific Quality of Service Requirements in Mobile Ad-Hoc Networks with High Network Load}
-%Multicast communication in bandwidth restricted Mobile Ad-Hoc Networks
-\titlerunning{Data Type Specific QoS In MANETs}  % abbreviated title (for running head)
-%                                     also used for the TOC unless
-%                                     \toctitle is used
-%
-\author{Klement Streit \and Peter Hillmann
+\title{Meeting Data Specific Quality of Service Requirements in Mobile Ad-Hoc Networks with High Network Load\\
+	{\footnotesize \textsuperscript{}}
+	\thanks{}
 }
-%
-\authorrunning{K. Streit, P. Hillmann} % abbreviated author list (for running head)
-%
-%%%% list of authors for the TOC (use if author list has to be modified)
-%\tocauthor{Ivar Ekeland, Roger Temam, Jeffrey Dean, David Grove,
-%Craig Chambers, Kim B. Bruce, and Elisa Bertino}
-%
-\institute{Universit\"at der Bundeswehr M\"unchen, 85579 Neubiberg, Germany\\
-\email{\{klement.streit,peter.hillmann\}@unibw.de}}
 
-\maketitle              % typeset the title of the contribution
+\author{\IEEEauthorblockN{1\textsuperscript{st} Klement Streit}
+	\IEEEauthorblockA{\textit{Universit{\"a}t der Bundeswehr M{\"u}nchen \&} \\
+		\textit{University of Twente}\\
+		Neubiberg, Germany \\
+		klement.streit@unibw.de}
+	\and
+	\IEEEauthorblockN{2\textsuperscript{nd} Peter Hillmann}
+	\IEEEauthorblockA{\textit{CODE Research Institute} \\
+		\textit{Universit{\"a}t der Bundeswehr M{\"u}nchen} \\
+		Neubiberg, Germany \\
+		peter.hillmann@unibw.de}
+	\and
+	\IEEEauthorblockN{3\textsuperscript{rd} Gabi Dreo Rodosek}
+	\IEEEauthorblockA{\textit{CODE Research Institute} \\
+		\textit{Universit{\"a}t der Bundeswehr M{\"u}nchen} \\
+		Neubiberg, Germany \\
+		gabi.dreo@unibw.de}
+}
+
+\maketitle         % typeset the title of the contribution
 
 \begin{abstract}
  In the military sector, radio communication is vital during a mission. The information exchange is provided using a Mobile Ad-Hoc Network. In order to reach specific participants and to transmit data in the awareness of restricted resources, multicast is the common communication technique. Within the network, the armed forces send different data types with appropriate transmission technologies. Hence, the forwarding of video and audio streams over several nodes increases the network load. Different Quality of Service requirements exist for specific data types. Voice has the highest priority and should be delivered in real time. Quality of Service is compromised by overload situations, limited bandwidth, arising bottlenecks or active attacks. These situations can result in higher delay, congestion, insufficient packet delivery and, in the worst case, a Denial of Service. Therefore, the objective of this PhD research is to adapt the transmission of various data types to the current utilization of the Mobile Ad-Hoc Network, to ensure Quality of Service and resilience. For instance, in order to meet the requirements, certain routes within the network that are compromised by limited bandwidth will prioritize transmission of voice over video.
@@ -70,7 +76,7 @@ pdfborder={0 0 0}
 	In the military sector it is particularly important to meet the transmission requirements with Quality of Service (\QOS{}) compared to the civil environment. Troops in combat depend on a robust network architecture that is available at any time, even when the participants are constantly on the move and communication flow is high. Every data type mentioned above has individual \QOS{} requirements to provide their services. They differ in delay, throughput, loss rate and quality. Voice over IP (\VOIP{}) relies on a delay less than $250$ $ms$. Video streaming at least needs a bandwidth over $1$ $Mbps$. Transferring for instance a video stream with a resolution of $640$x$480$ pixels needs a bandwidth between $600$-$700$ $Kbps$ \cite{Video:Bandwidth}. Providing these services increases the network load. Narrowband used by military reaches typically a bandwidth of $64$ $Kbps$ \cite{military:narrowband}. With broadband communication the radio can reach a bandwidth up to $2$ $Mbps$. The resources of \MANET{s} vary depending on the continuously changing environmental conditions. It is a common situation, that only a single, long-distance route is available to a multicast receiver or that a specific node acts as forwarder for several multicast sessions. In case of high network load, these constellations result in higher delay, congestions, bottlenecks, insufficient packet delivery ratio and, in the worst case, a Denial-of-Service. Consequently, all \QOS{} requirements can no longer be achieved with current technologies. The scenario in Figure \ref{fig:multicast} illustrates a behavior, where a capacity problem can occur and could be solved with \QOS{} extended routing.
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.9\textwidth]{figures/MulticastCommunicationOne.pdf}
+		\includegraphics[width=0.48\textwidth]{figures/MulticastCommunicationOne.pdf}
 		\caption{Example of an arising transmission problem}
 		\label{fig:multicast}
 	\end{figure}
@@ -82,7 +88,7 @@ pdfborder={0 0 0}
 	Before a node starts transmitting payload, the network capacities have to be compared to the \QOS{} requirements of the payload. This is achieved with transmission request. This transmission requests can either be received from a participating node of the network (\textit{External Transmission Request}) or from a node itself (\textit{Internal Transmission Request}). Both requests contain the \QOS{} requirements of the data type and the priority. \QOS{} requirements specify delay, loss rate and necessary bandwidth of the payload. 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=\textwidth]{figures/QoSDecision.pdf}
+		\includegraphics[width=0.48\textwidth]{figures/QoSDecision.pdf}
 		\caption{Structure of \QOS{} aware Node in a \MANET{}}
 		\label{fig:QoSDecision}
 	\end{figure}
@@ -110,7 +116,7 @@ pdfborder={0 0 0}
 	Before we try to find a solution for the mentioned research questions, it has to be analyzed which effects occur during transmission in such situations. Especially, if a message is send over multiple nodes and the payload need to be spit. It is expected, that generating a balanced utilization provides better results with respect to delay and loss rate.
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figures/ScenarioBoth.pdf}
+		\includegraphics[width=0.48\textwidth]{figures/ScenarioBoth.pdf}
 		\caption{Scenario using different routes to destination}
 		\label{fig:ScenarioBoth}
 	\end{figure}
@@ -240,69 +246,70 @@ pdfborder={0 0 0}
 %
 % ---- Bibliography ----
 %
-\begin{thebibliography}{5}
+%\begin{thebibliography}{5}
+%%
 %
-
-\bibitem{SDR}
-Harris, F. j.: Software defined radio. In: International Conference on Signals and Electronic Systems (2008) 
-
-\bibitem {military:manet}
-Burbank, J. L., Chimento P. F., Haberman, B. K., Kasch W. T.: Key Challenges of Military Tactical Networking and the Elusive Promise of MANET Technology. In: IEEE Communications Magazine (2006)
-
-\bibitem{military:narrowband}
-Leduc, J., Antweiler, M., Maseng, T.: Spectrum issues of NATO narrowband waveform: On the spectral efficiency of CPM-Modulation with small modulation indices. In: Military Communications and Information Systems Conference (MCC) (2012)
-%\bibitem{MANET:ResourceManagement}
-%Ganesh Datey, S., Ansari, T.:Mobile Ad-Hoc Networks Its Advantages and
-%Challenges. In: International Journal of Electrical and Electronics Research (A.S.M) (2015)
-
-\bibitem{Video:Bandwidth}
-Ozer, J.:Streaming 101: The Basics – Codecs, Bandwidth, Data Rate and Resolution. \url{https://streaminglearningcenter.com/articles/streaming-101-the-basics-codecs-bandwidth-data-rate-and-resolution.html}. Accessed 05 Feb 2009
-
-\bibitem{RelatedWork:MultiPath}
-Bakhsh, H., Zhang, N., Carpenter, A.: TADL: A Trust-Aware Dynamic Location-Based Protocol Suite For Discovering Multiple Paths in MANETs. In: Proceedings of the 2015 International Conference on Distributed Computing and Networking (2015)
-
-\bibitem{RelatedWork:QoSWMN}
-Lu, L., Jiang, H., Han, G., Ma and Renke Sun, S.: Multi-criteria routing metric for supporting data-differentiated service in hybrid wireless mesh networks in coal mines. In: International Journal of Distributed Sensor Networks (2017)
-
-\bibitem{RelatedWorkContent:WMN}
-Akyildiz, Ian F., Wang, X., Wang, W.: Wireless mesh networks: a survey. In: Wireless mesh networks (2005)
-
-\bibitem{ReleatedWork:QoSSessionAdaptation}
-Shams Shafigh, A.,Lorenzo Veiga, B., Glisic, S.: Cross layer scheme for quality of service aware multicast routing in mobile ad hoc networks. In: Journal
-Wireless Networks (2018)
-
-\bibitem{RelatedWorkContent:QoSSessionAdaptationFuzzySets}
-Zadeh, L. A.: Fuzzy sets. In: Information and Control (1965)
-
-\bibitem{RelatedWorkContent:QoSSessionAdaptationFuzzySets2}
-Zadeh, A.: Outline of a New Approach to the Analysis of Complex Systems and Decision Processes. In: IEEE Transactions on Systems, Man, and Cybernetics (1973)
-
-\bibitem{EvaluationAODV}
-C. E. Perkins and E. M. Royer.: Ad-hoc on-demand distance vector routing. In: Mobile Computing Systems and Applications (1999)
-\bibitem{Evaluation:DSR}
-B. Johnson, David and Maltz, David.:Dynamic Source Routing in Ad Hoc Wireless Networks. In: Mobile Computing (1999)
+%\bibitem{SDR}
+%Harris, F. j.: Software defined radio. In: International Conference on Signals and Electronic Systems (2008) 
+%
+%\bibitem {military:manet}
+%Burbank, J. L., Chimento P. F., Haberman, B. K., Kasch W. T.: Key Challenges of Military Tactical Networking and the Elusive Promise of MANET Technology. In: IEEE Communications Magazine (2006)
+%
+%\bibitem{military:narrowband}
+%Leduc, J., Antweiler, M., Maseng, T.: Spectrum issues of NATO narrowband waveform: On the spectral efficiency of CPM-Modulation with small modulation indices. In: Military Communications and Information Systems Conference (MCC) (2012)
+%%\bibitem{MANET:ResourceManagement}
+%%Ganesh Datey, S., Ansari, T.:Mobile Ad-Hoc Networks Its Advantages and
+%%Challenges. In: International Journal of Electrical and Electronics Research (A.S.M) (2015)
+%
+%\bibitem{Video:Bandwidth}
+%Ozer, J.:Streaming 101: The Basics – Codecs, Bandwidth, Data Rate and Resolution. \url{https://streaminglearningcenter.com/articles/streaming-101-the-basics-codecs-bandwidth-data-rate-and-resolution.html}. Accessed 05 Feb 2009
+%
+%\bibitem{RelatedWork:MultiPath}
+%Bakhsh, H., Zhang, N., Carpenter, A.: TADL: A Trust-Aware Dynamic Location-Based Protocol Suite For Discovering Multiple Paths in MANETs. In: Proceedings of the 2015 International Conference on Distributed Computing and Networking (2015)
+%
 %\bibitem{RelatedWork:QoSWMN}
-%Sathya, P., Sathiskumar, N.R., Ramasamy, K.: Qos Multicast Routing Algorithm For MANET. In: International Journal Of Engineering And Computer Science (2017)
-
-
-
-%\bibitem {mich:tar}
-%Michalek, R., Tarantello, G.:
-%Subharmonic solutions with prescribed minimal
-%period for nonautonomous Hamiltonian systems.
-%J. Diff. Eq. 72, 28--55 (1988)
+%Lu, L., Jiang, H., Han, G., Ma and Renke Sun, S.: Multi-criteria routing metric for supporting data-differentiated service in hybrid wireless mesh networks in coal mines. In: International Journal of Distributed Sensor Networks (2017)
 %
-%\bibitem {tar}
-%Tarantello, G.:
-%Subharmonic solutions for Hamiltonian
-%systems via a $\bbbz_{p}$ pseudoindex theory.
-%Annali di Matematica Pura (to appear)
+%\bibitem{RelatedWorkContent:WMN}
+%Akyildiz, Ian F., Wang, X., Wang, W.: Wireless mesh networks: a survey. In: Wireless mesh networks (2005)
 %
-%\bibitem {rab}
-%Rabinowitz, P.:
-%On subharmonic solutions of a Hamiltonian system.
-%Comm. Pure Appl. Math. 33, 609--633 (1980)
-
-\end{thebibliography}
-
+%\bibitem{ReleatedWork:QoSSessionAdaptation}
+%Shams Shafigh, A.,Lorenzo Veiga, B., Glisic, S.: Cross layer scheme for quality of service aware multicast routing in mobile ad hoc networks. In: Journal
+%Wireless Networks (2018)
+%
+%\bibitem{RelatedWorkContent:QoSSessionAdaptationFuzzySets}
+%Zadeh, L. A.: Fuzzy sets. In: Information and Control (1965)
+%
+%\bibitem{RelatedWorkContent:QoSSessionAdaptationFuzzySets2}
+%Zadeh, A.: Outline of a New Approach to the Analysis of Complex Systems and Decision Processes. In: IEEE Transactions on Systems, Man, and Cybernetics (1973)
+%
+%\bibitem{EvaluationAODV}
+%C. E. Perkins and E. M. Royer.: Ad-hoc on-demand distance vector routing. In: Mobile Computing Systems and Applications (1999)
+%\bibitem{Evaluation:DSR}
+%B. Johnson, David and Maltz, David.:Dynamic Source Routing in Ad Hoc Wireless Networks. In: Mobile Computing (1999)
+%%\bibitem{RelatedWork:QoSWMN}
+%%Sathya, P., Sathiskumar, N.R., Ramasamy, K.: Qos Multicast Routing Algorithm For MANET. In: International Journal Of Engineering And Computer Science (2017)
+%
+%
+%
+%%\bibitem {mich:tar}
+%%Michalek, R., Tarantello, G.:
+%%Subharmonic solutions with prescribed minimal
+%%period for nonautonomous Hamiltonian systems.
+%%J. Diff. Eq. 72, 28--55 (1988)
+%%
+%%\bibitem {tar}
+%%Tarantello, G.:
+%%Subharmonic solutions for Hamiltonian
+%%systems via a $\bbbz_{p}$ pseudoindex theory.
+%%Annali di Matematica Pura (to appear)
+%%
+%%\bibitem {rab}
+%%Rabinowitz, P.:
+%%On subharmonic solutions of a Hamiltonian system.
+%%Comm. Pure Appl. Math. 33, 609--633 (1980)
+%
+%\end{thebibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{references,rfc}
 \end{document}
